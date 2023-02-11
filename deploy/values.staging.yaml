@@ -1,0 +1,16 @@
+replicaCount: 2
+name: web-app
+fullname: web-app
+namespace: product
+dnsHost: web-app-staging.example.com
+
+configmap:
+  # env Variables for client
+  appEnv: staging
+  baseQueryUrl: ''
+  baseWsUrl: ''
+
+image:
+  repository: ''
+  tag: latest
+  imagePullPolicy: IfNotPresent

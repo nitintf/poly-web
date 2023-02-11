@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: vite-react-app
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: vite-react-app
+
+  template:
+    metadata:
+      labels:
+        app: vite-react-app
+    spec:
+      containers:
+        - name: vite-react-app-backend
+          image: vite-react-app-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3001
+          envFrom:
+            - configMapRef:
+                name: vite-react-app
+          # livenessProbe:
+          #   httpGet:
+          #     path: "/_healthz"
+          #     port: service-port
+          #     scheme: HTTP
+          #   failureThreshold: 3
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 5
+          #   successThreshold: 1
+          #   timeoutSeconds: 2
+          # readinessProbe:
+          #   httpGet:
+          #     path: "/_readyz"
+          #     port: service-port
+          #     scheme: HTTP
+          #   failureThreshold: 3
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 5
+          #   successThreshold: 1
+          #   timeoutSeconds: 2

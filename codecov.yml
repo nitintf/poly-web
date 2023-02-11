@@ -1,0 +1,23 @@
+comment:
+  layout: 'reach, diff, flags, files'
+  require_changes: true
+
+ignore:
+  - '**/__e2e_tests__/*'
+  - '**/__tests__/*'
+
+coverage:
+  precision: 2
+  round: down
+  range: 1...100
+
+  status:
+    project:
+      default:
+        informational: true
+    patch:
+      default:
+        informational: false
+        target: auto
+        threshold: 0%
+    changes: true

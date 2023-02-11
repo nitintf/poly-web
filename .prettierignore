@@ -1,0 +1,10 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+deploy/
+dist
+src/__generated__
+
+pnpm-lock.yaml

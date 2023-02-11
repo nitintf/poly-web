@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vite-react-app
+  labels:
+    app: vite-react-app
+data:
+  NODE_ENV: production
+  baseQueryUrl: http://localhost:8001/query
+  baseWsUrl: ws://localhost:8001/query

@@ -1,0 +1,23 @@
+version: '3.4'
+services:
+  web:
+    build:
+      context: .
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    restart: unless-stopped
+    ports:
+      - 7337:7337
+
+  backend:
+    container_name: vite-react-app-backend
+    build:
+      context: .
+      dockerfile: Dockerfile.deploy
+    restart: unless-stopped
+    ports:
+      - 3001:3001
+    env_file:
+      - .env
+    image: vite-react-app-backend

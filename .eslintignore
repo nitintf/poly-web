@@ -1,0 +1,7 @@
+*.css
+*.svg
+
+!.*
+dist/
+node_modules/
+test/

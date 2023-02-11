@@ -1,0 +1,9 @@
+'*.{jsx,ts,tsx}':
+  - organize-imports-cli
+  - pnpm format:fix
+  - pnpm lint:fix
+  - pretty-quick --staged
+'*.{md,css,scss}':
+  - pnpm format:fix
+'*.{spec.ts,spec.tsx,test.ts,test.tsx}':
+  - pnpm test:silent

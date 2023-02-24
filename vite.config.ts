@@ -7,9 +7,9 @@ import react from 'vite-preset-react';
 
 const serverVars = ['baseQueryUrl', 'baseWsUrl'];
 
-const config = {};
+const config: Record<string, string | undefined> = {};
 
-export default ({ mode }) => {
+export default ({ mode }: { mode: string }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), '') };
 
   for (const value of serverVars) {

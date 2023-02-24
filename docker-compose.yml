@@ -14,7 +14,7 @@ services:
     container_name: vite-react-app-backend
     build:
       context: .
-      dockerfile: Dockerfile.deploy
+      dockerfile: deploy.Dockerfile
     restart: unless-stopped
     ports:
       - 3001:3001

@@ -1,5 +1,5 @@
 const presets =
-  process.env['NODE_ENV'] === 'production'
+  process.env.NODE_ENV === 'production'
     ? [
         ['@babel/preset-env', { targets: { node: 'current' } }],
         [
@@ -13,7 +13,7 @@ const presets =
     : null;
 
 const plugins = [['macros']];
-if (process.env['NODE_ENV'] === 'production') {
+if (process.env.NODE_ENV === 'production') {
   plugins.push(['babel-plugin-transform-vite-meta-env']);
 }
 

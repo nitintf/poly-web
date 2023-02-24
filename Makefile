@@ -37,4 +37,3 @@ ifndef ENV
 	$(error ENV must be set for deploy)
 endif
 	helm upgrade --atomic --install juno-application ./deploy/juno-application -f ./deploy/values.${ENV}.yaml --set image.tag=${VERSION_TAG}
-Cruise

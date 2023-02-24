@@ -3,6 +3,7 @@ import { ErrorCallback } from 'app/components/common';
 import { apolloClient } from 'app/gql/api';
 import { ErrorBoundary } from 'react-error-boundary';
 import './App.css';
+import React from "react";
 
 const App: React.FC = () => (
   <ErrorBoundary FallbackComponent={ErrorCallback}>
